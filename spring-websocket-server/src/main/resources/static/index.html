@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebSocket Chat</title>
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/main.css" rel="stylesheet">
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+    <script src="/chat.js"></script>
+</head>
+<body>
+<div class="container" id="main-content">
+    <div class="row">
+        <div class="col-md-12 space-bottom10">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="from">Name?</label>
+                    <input class="form-control" id="from" placeholder="enter your name..."
+                           type="text">
+                </div>
+                <button class="btn btn-default"
+                        id="connect"
+                        type="submit">Connect
+                </button>
+                <button class="btn btn-default"
+                        disabled="disabled"
+                        id="disconnect"
+                        type="submit">Disconnect
+                </button>
+            </form>
+        </div>
+    </div>
+    <div class="row space-bottom10">
+        <form>
+            <div class="col-md-2">
+                <select class="form-control"
+                        id="topic"
+                        name="topic">
+                    <option>Lifestyle</option>
+                    <option>Travel</option>
+                    <option>Career</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <input class="form-control"
+                       id="text"
+                       placeholder="enter message ..."
+                       type="text">
+            </div>
+            <div class="col-md-4">
+                <button class="btn btn-default"
+                        id="send"
+                        type="submit">Send
+                </button>
+            </div>
+        </form>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-striped" id="conversation">
+                <thead>
+                <tr>
+                    <th width="10%">From</th>
+                    <th width="15%">Topic</th>
+                    <th width="60%">Message</th>
+                    <th width="10%">Time</th>
+                </tr>
+                </thead>
+                <tbody id="messages">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
